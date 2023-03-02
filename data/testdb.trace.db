@@ -7,3 +7,15 @@ create table if not exists messages ( [42001-214]
 2023-03-02 13:37:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table if not exists messages ([*]"; expected "identifier"; SQL statement:
 create table if not exists messages ( [42001-214]
+2023-03-02 14:35:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" already exists; SQL statement:
+CREATE TABLE messages ( id VARCHAR(60) DEFAULT RANDOM_UUID() PRIMARY KEY, text VARCHAR NOT NULL ) [42101-214]
+2023-03-02 14:35:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" already exists; SQL statement:
+CREATE TABLE messages ( id VARCHAR(60) DEFAULT RANDOM_UUID() PRIMARY KEY, text VARCHAR NOT NULL ) [42101-214]
+2023-03-02 14:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]table if exists messages"; expected "identifier"; SQL statement:
+delete table if exists messages [42001-214]
+2023-03-02 14:36:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]table messages"; expected "identifier"; SQL statement:
+delete table messages [42001-214]
