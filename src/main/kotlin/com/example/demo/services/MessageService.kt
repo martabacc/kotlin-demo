@@ -2,6 +2,7 @@ package com.example.demo.services
 
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Service
+import org.springframework.jdbc.core.query
 import java.util.*
 
 
@@ -20,5 +21,9 @@ class MessageService(val db: JdbcTemplate) {
             id,
             message.text
         )
+    }
+
+    fun findMessageById(id: String): List<Message> = db.query("select * from messages where id = ?", id) { response, _ ->
+        Message(response.getString("id"), response.getString("text"))
     }
 }
